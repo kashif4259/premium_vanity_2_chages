@@ -1,0 +1,10 @@
+<html>
+                            <div style="max-width: 60%; color: #000000 !important; font-family: Helvetica; margin:auto; padding-bottom: 10px;">
+                                <div style="text-align:center; padding-top: 10px; padding-bottom: 10px;">
+                                    <h1>{app_name}</h1>
+                                </div>
+                                <div style="padding: 35px;padding-left:20px; font-size:17px; border-bottom: 1px solid #cccccc; border-top: 1px solid #cccccc;">Hi {first_name},<br>
+                        Thanks for shopping with us.<br>
+                        Please find the attachment for your purchase ({invoice_id}) details.        </div>
+                            </div>
+                        </html>

@@ -1,0 +1,7 @@
+# Ignore MySQL socket files
+db_data/mysql.sock
+db_data/*.sock
+
+# Ignore any other temporary MySQL files
+db_data/*.pid
+db_data/*.err

@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    volumes: 
+      - ./src:/var/www/html/
+    ports:
+      - 7002:80
+    networks:
+      - laravel
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: docker_database_premium_vanity
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    volumes: 
+      - ./db_data:/var/lib/mysql
+    ports:
+      - 7306:3306
+    networks:
+      - laravel
+
+  npm:
+    build: 
+      context: .
+      dockerfile: NodeDockerfile
+    container_name: npm_container
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - laravel
+    working_dir: /var/www/html
+    command: npm install && npm run dev
+
+networks:
+  laravel:
+    driver: bridge
